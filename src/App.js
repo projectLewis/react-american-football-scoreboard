@@ -9,19 +9,22 @@ function App() {
   const [awayScore, setAwayScore] = useState(0);
 
   const handleScoring = (team, typeOfScore) => {
+    const touchdown = 7;
+    const fieldGoal = 3;
+
     if (team.toLowerCase() === 'home') {
       if (typeOfScore.toLowerCase() === 'td') {
-        setHomeScore(prevScore => prevScore + 7); 
+        setHomeScore(prevScore => prevScore + touchdown); 
       }
       if (typeOfScore.toLowerCase() === 'fg') {
-        setHomeScore(prevScore => prevScore + 3); 
+        setHomeScore(prevScore => prevScore + fieldGoal); 
       }
     } else if (team.toLowerCase() === 'away') {
       if (typeOfScore.toLowerCase() === 'td') {
-        setAwayScore(prevScore => prevScore + 7);
+        setAwayScore(prevScore => prevScore + touchdown);
       }
       if (typeOfScore.toLowerCase() === 'fg') {
-        setAwayScore(prevScore => prevScore + 3); 
+        setAwayScore(prevScore => prevScore + fieldGoal); 
       }
   }
 };
